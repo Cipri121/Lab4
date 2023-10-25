@@ -128,6 +128,7 @@ public class Exercitiu {
                         if(e.getDenumire().equals(nume)) {
                             System.out.print("Alegeti noul mod de tiparire: ");
                             mod = ModTiparire.valueOf(reader1.next().toUpperCase());
+                            ((imprimanta) e).setMod(mod);
                         }
                     }
                     System.out.println("Mod tiparire actualizat!");
