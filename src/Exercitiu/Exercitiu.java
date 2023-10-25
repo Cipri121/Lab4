@@ -12,6 +12,7 @@ public class Exercitiu {
         List<Electronice> electronice = new ArrayList<>();
         Scanner scanner = new Scanner(new File("src/Exercitiu/electronice.txt"));
         Scanner reader = new Scanner(System.in);
+        Scanner reader1 = new Scanner(System.in);
         int opt;
         String denumire;
         int nr_inv;
@@ -63,7 +64,7 @@ public class Exercitiu {
         }
 
         do{
-            System.out.println("Meniu\n0 - Iesire\n");
+            System.out.println("Meniu\n0 - Iesire");
             System.out.println("1 - Afişarea tuturor echipamentelor\n" +
                     "2 - Afişarea imprimantelor\n" +
                     "3 - Afişarea copiatoarelor\n" +
@@ -88,14 +89,51 @@ public class Exercitiu {
                     }
                     break;
                 case 2:
+                    for (Electronice e: electronice) {
+                        if(e instanceof imprimanta)
+                            System.out.println(e);
+                    }
                     break;
-                case 3:
+                case 3:for (Electronice e: electronice) {
+                    if(e instanceof copiator)
+                        System.out.println(e);
+                }
                     break;
-                case 4:
+                case 4:for (Electronice e: electronice) {
+                    if(e instanceof sistemDeCalcul)
+                        System.out.println(e);
+                }
                     break;
                 case 5:
+                    Stare stare1;
+                    System.out.print("Alegeti un echipament pentru care vreti sa schimbati starea: ");
+                    String nume = reader1.nextLine();
+                    for (Electronice e: electronice) {
+                        if(e.getDenumire().equals(nume)) {
+                            System.out.print("Alegeti noua stare: ");
+                            stare1 = Stare.valueOf(reader1.next().toUpperCase());
+                            e.setStare(stare1);
+                        }
+
+                        }
+                    System.out.println("Stare actualizata!");
+                    for (Electronice e: electronice) {
+                        System.out.println(e);
+                    }
                     break;
                 case 6:
+                    System.out.print("Alegeti o imprimanta pentru care dorirti sa schimbati modul de tiparire: ");
+                    nume = reader1.nextLine();
+                    for (Electronice e: electronice) {
+                        if(e.getDenumire().equals(nume)) {
+                            System.out.print("Alegeti noul mod de tiparire: ");
+                            mod = ModTiparire.valueOf(reader1.next().toUpperCase());
+                        }
+                    }
+                    System.out.println("Mod tiparire actualizat!");
+                    for (Electronice e: electronice) {
+                        System.out.println(e);
+                    }
                     break;
                 case 7:
                     break;

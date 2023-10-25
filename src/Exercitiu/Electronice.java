@@ -30,6 +30,10 @@ public class Electronice {
                 '}';
     }
 
+    public void setStare(Stare stare) {
+        this.stare = stare;
+    }
+
     public String getDenumire() {
         return denumire;
     }
@@ -49,4 +53,5 @@ public class Electronice {
     public String getZona_mag() {
         return zona_mag;
     }
+
 }

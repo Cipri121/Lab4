@@ -9,7 +9,7 @@ public class imprimanta extends Electronice{
     private int ppm;
     private String rezolutie;
     private int p_car;
-    private ModTiparire mod;
+    private static ModTiparire mod;
 
     public imprimanta(String denumire, int nr_inv, int pret, String zona_mag, Stare stare, int ppm, String rezolutie, int p_car, ModTiparire mod) {
         super(denumire, nr_inv, pret, zona_mag, stare);

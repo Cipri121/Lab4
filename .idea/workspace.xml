@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="372793d4-b38a-4841-aa9b-4092ff85e411" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercitiu/Electronice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercitiu/Exercitiu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercitiu/copiator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercitiu/electronice.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercitiu/imprimanta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exercitiu/sistemDeCalcul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exercitiu/Electronice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercitiu/Electronice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exercitiu/Exercitiu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercitiu/Exercitiu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exercitiu/imprimanta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exercitiu/imprimanta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +29,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2X1OYhs8nPfgdr3OLe3FDfjspw2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -47,7 +45,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Cipri/OneDrive - Universitatea Politehnica Timisoara/Documents/GitHub/Lab4"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
