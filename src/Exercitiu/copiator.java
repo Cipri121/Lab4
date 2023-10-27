@@ -13,6 +13,10 @@ public class copiator extends Electronice{
         this.format = format;
     }
 
+    public void setFormat(Format format) {
+        this.format = format;
+    }
+
     @Override
     public String toString() {
         return super.toString() + "copiator{" +

@@ -29,6 +29,7 @@ public class Exercitiu {
         float vit_proc;
         int c_hdd;
         SistemeOperare sistem;
+        String nume;
 
         while(scanner.hasNext()){
             String linie = scanner.nextLine();
@@ -39,43 +40,44 @@ public class Exercitiu {
             zona_mag = cuv[3];
             stare = Stare.valueOf(cuv[4].toUpperCase());
 
-            if(cuv[5].equals("imprimanta")){
-                ppm = Integer.parseInt(cuv[6]);
-                rezolutie = cuv[7];
-                p_car = Integer.parseInt(cuv[8]);
-                mod = ModTiparire.valueOf(cuv[9].toUpperCase());
-                electronice.add(new imprimanta(denumire, nr_inv, pret, zona_mag, stare, ppm, rezolutie, p_car, mod));
-            }
-
-            else if(cuv[5].equals("copiator")){
-                p_ton = Integer.parseInt(cuv[6]);
-                format = Format.valueOf(cuv[7]);
-                electronice.add(new copiator(denumire, nr_inv, pret, zona_mag, stare, p_ton, format));
-            }
-
-            else if(cuv[5].equals("sistem de calcul")){
-                tip_mon = cuv[6];
-                vit_proc = Float.parseFloat(cuv[7]);
-                c_hdd = Integer.parseInt(cuv[8]);
-                sistem = SistemeOperare.valueOf(cuv[9].toUpperCase());
-                electronice.add(new sistemDeCalcul(denumire, nr_inv, pret, zona_mag, stare, tip_mon, vit_proc, c_hdd, sistem));
+            switch (cuv[5]) {
+                case "imprimanta" -> {
+                    ppm = Integer.parseInt(cuv[6]);
+                    rezolutie = cuv[7];
+                    p_car = Integer.parseInt(cuv[8]);
+                    mod = ModTiparire.valueOf(cuv[9].toUpperCase());
+                    electronice.add(new imprimanta(denumire, nr_inv, pret, zona_mag, stare, ppm, rezolutie, p_car, mod));
+                }
+                case "copiator" -> {
+                    p_ton = Integer.parseInt(cuv[6]);
+                    format = Format.valueOf(cuv[7]);
+                    electronice.add(new copiator(denumire, nr_inv, pret, zona_mag, stare, p_ton, format));
+                }
+                case "sistem de calcul" -> {
+                    tip_mon = cuv[6];
+                    vit_proc = Float.parseFloat(cuv[7]);
+                    c_hdd = Integer.parseInt(cuv[8]);
+                    sistem = SistemeOperare.valueOf(cuv[9].toUpperCase());
+                    electronice.add(new sistemDeCalcul(denumire, nr_inv, pret, zona_mag, stare, tip_mon, vit_proc, c_hdd, sistem));
+                }
             }
 
         }
 
         do{
             System.out.println("Meniu\n0 - Iesire");
-            System.out.println("1 - Afişarea tuturor echipamentelor\n" +
-                    "2 - Afişarea imprimantelor\n" +
-                    "3 - Afişarea copiatoarelor\n" +
-                    "4 - Afişarea sistemelor de calcul\n" +
-                    "5 - Modificarea stării în care se află un echipament\n" +
-                    "6 - Setarea unui anumit mod de scriere pentru o imprimantă\n" +
-                    "7 - Setarea unui format de copiere pentru copiatoare\n" +
-                    "8 - Instalarea unui anumit sistem de operare pe un sistem de calcul\n" +
-                    "9 - Afişarea echipamentelor vândute\n" +
-                    "10 - Să se realizeze două metode statice pentru serializarea / deserializarea colecției de\n" +
-                    "obiecte în fișierul echip.bin");
+            System.out.println("""
+                    1 - Afişarea tuturor echipamentelor
+                    2 - Afişarea imprimantelor
+                    3 - Afişarea copiatoarelor
+                    4 - Afişarea sistemelor de calcul
+                    5 - Modificarea stării în care se află un echipament
+                    6 - Setarea unui anumit mod de scriere pentru o imprimantă
+                    7 - Setarea unui format de copiere pentru copiatoare
+                    8 - Instalarea unui anumit sistem de operare pe un sistem de calcul
+                    9 - Afişarea echipamentelor vândute
+                    10 - Să se realizeze două metode statice pentru serializarea / deserializarea colecției de
+                    obiecte în fișierul echip.bin""");
             System.out.print("Da-ti optiunea: ");
             opt = reader.nextInt();
 
@@ -107,7 +109,7 @@ public class Exercitiu {
                 case 5:
                     Stare stare1;
                     System.out.print("Alegeti un echipament pentru care vreti sa schimbati starea: ");
-                    String nume = reader1.nextLine();
+                    nume = reader1.nextLine();
                     for (Electronice e: electronice) {
                         if(e.getDenumire().equals(nume)) {
                             System.out.print("Alegeti noua stare: ");
@@ -137,10 +139,42 @@ public class Exercitiu {
                     }
                     break;
                 case 7:
+                    System.out.print("Alegeti un copiator pentru care doriti sa schimbati formatul de copiere: ");
+                    nume = reader1.nextLine();
+                    for (Electronice e: electronice) {
+                        if(e.getDenumire().equals(nume)) {
+                            System.out.print("Alegeti noul format: ");
+                            format = Format.valueOf(reader1.next().toUpperCase());
+                            ((copiator) e).setFormat(format);
+                        }
+                    }
+                    System.out.println("Format actualizat!");
+                    for (Electronice e: electronice) {
+                        System.out.println(e);
+                    }
                     break;
                 case 8:
+                    System.out.print("Alegeti sistemul de calcul pentru care vreti sa instalati un sistem de operare: ");
+                    nume = reader1.nextLine();
+                    for (Electronice e: electronice) {
+                        if(e.getDenumire().equals(nume)) {
+                            System.out.print("Alegeti sistemul de operare: ");
+                            sistem = SistemeOperare.valueOf(reader1.next().toUpperCase());
+                            ((sistemDeCalcul) e).setSistem(sistem);
+                        }
+                    }
+                    System.out.println("Sistem instalat!");
+                    for (Electronice e: electronice) {
+                        System.out.println(e);
+                    }
                     break;
                 case 9:
+                    System.out.println("Electronicele vandute sunt: ");
+                     for(Electronice e: electronice) {
+                     if(e.getStare() == Stare.VANDUT) {
+                        System.out.println(e);
+                    }
+                }
                     break;
                 case 10:
                     break;

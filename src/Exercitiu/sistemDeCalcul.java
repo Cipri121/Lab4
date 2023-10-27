@@ -19,6 +19,10 @@ public class sistemDeCalcul extends Electronice{
         this.sistem = sistem;
     }
 
+    public void setSistem(SistemeOperare sistem) {
+        this.sistem = sistem;
+    }
+
     @Override
     public String toString() {
         return super.toString() + "sistemDeCalcul{" +
