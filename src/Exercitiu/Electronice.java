@@ -1,10 +1,13 @@
 package Exercitiu;
+
+import java.io.*;
+
 enum Stare{
     ACHIZITIONAT,
     EXPUS,
     VANDUT
 }
-public class Electronice {
+public class Electronice implements Serializable {
     private String denumire;
     private int nr_inv;
     private int pret;
@@ -54,4 +57,29 @@ public class Electronice {
         return zona_mag;
     }
 
-}
+    static void scrie(Object o) {
+        try {
+            FileOutputStream f = new FileOutputStream("echip.bin");
+            ObjectOutputStream oos = new ObjectOutputStream(f);
+            oos.writeObject(o);
+            oos.close();
+            f.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    static Object citeste() {
+        try {
+            FileInputStream f = new FileInputStream("echip.bin");
+            ObjectInputStream ois = new ObjectInputStream(f);
+            Object o=ois.readObject();
+            ois.close();
+            f.close();
+            return o;
+        }
+        catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    }

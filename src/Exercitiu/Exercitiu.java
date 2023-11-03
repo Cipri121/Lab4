@@ -177,6 +177,16 @@ public class Exercitiu {
                 }
                     break;
                 case 10:
+                    System.out.println("1 - Serializare\n2 - Deserializare");
+                    System.out.print("Alegeti optiunea: ");
+                    int o = reader.nextInt();
+                    if(o == 1) {
+                        for (Electronice e:electronice) {
+                            Electronice.scrie(e);
+                        }
+                    }
+                    if(o == 2)
+                        System.out.println(Electronice.citeste());
                     break;
                 default:
                     System.out.println("Optiune gresita!");
